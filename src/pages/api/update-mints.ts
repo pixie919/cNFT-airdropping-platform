@@ -43,31 +43,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
             else if (network === 'testnet') shyftNetwork = Network.Testnet;
             else throw new Error('WRONG_NETWORK');
 
-            // console.log("ref_address: ",reference_address);
-            // console.log("addresses_to_monitor: ",addresses_to_monitor);
-
             if (reference_address && addresses_to_monitor.length && network) {
-                // console.dir(addresses_to_monitor,{depth:null});
-
-                // const nftOwners = await shyftClient.nft.getOwners({network:shyftNetwork,mints:addresses_to_monitor});
-
-                // console.log(nftOwners);
-                // if(nftOwners.length === 0)
-                //     throw new Error('NO_NFT_DATA');
-
-                // const allOwners:object[] = nftOwners;
-                // // const allOwners:object[] = [];
-                // for(var i = 0; i < allOwners.length; i++)
-                // {
-                //     const eachOwner:any = allOwners[i];
-                //     //fetch NFT metadata here
-                //     const insertToDb = await supabase.from('monitor_mints').upsert({
-                //         mint_address: eachOwner.nft_address,
-                //         current_holder: eachOwner.owner
-                //     });
-                //     if (insertToDb.error !== null)
-                //         throw new Error('INSERT_TO_DB_FAILED');
-                // }
                 const { error } = await supabase.from('monitor_mints').delete().gte('id', -1);
 
                 for (var i = 0; i < addresses_to_monitor.length; i++) {

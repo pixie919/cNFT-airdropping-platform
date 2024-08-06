@@ -1,0 +1,3 @@
+{"v":0,"name":"sugar","msg":"Lend me some sugar, I am your neighbor.","level":30,"hostname":"shifu-the-great","pid":53767,"time":"2024-06-17T14:58:51.846529341Z","target":"sugar","line":123,"file":"src/main.rs"}
+{"v":0,"name":"sugar","msg":"MissingFileError(\"config.json\")","level":50,"hostname":"shifu-the-great","pid":53767,"time":"2024-06-17T14:58:51.850248629Z","target":"sugar_cli::config::parser","line":21,"file":"src/config/parser.rs"}
+t":"sugar_cli::cache","line":157,"file":"src/cache.rs"}
